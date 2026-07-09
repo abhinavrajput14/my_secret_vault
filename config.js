@@ -9,20 +9,20 @@
    ============================================================ */
 
 // Access passwords (case-sensitive)
-const USER_PASSWORD = "friend123";
+const USER_PASSWORD = "123456789";
 const ADMIN_PASSWORD = "admin14";
 
 // Firebase project config — replace with your own project's values.
 // Get this from Firebase Console > Project Settings > General > Your apps > SDK setup.
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAD7e4d4QaO7E-fgI1RP8dvBGRaATX5loQ",
+  authDomain: "my-vault-8cbe8.firebaseapp.com",
+  projectId: "my-vault-8cbe8",
+  storageBucket: "my-vault-8cbe8.firebasestorage.app",
+  messagingSenderId: "292546312117",
+  appId: "1:292546312117:web:caea085960dccc74fd0bfc",
+  measurementId: "G-2W9YW33087"
 };
-
 // The private message shown with the typewriter effect on the user page.
 const PRIVATE_MESSAGE = `Hey. I made this just for you — a small, private corner of the internet where I could say something honestly and hear back from you just as honestly. Take your time. There's no wrong answer here.`;
 
