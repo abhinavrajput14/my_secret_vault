@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You</title>
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Ambient aurora canvas, sits behind everything -->
+<canvas id="aurora-canvas"></canvas>
+<canvas id="particle-canvas"></canvas>
+
+<!-- ============================= LOGIN SCREEN ============================= -->
+<section id="login-screen" class="screen screen--center">
+  <div class="glass-card login-card" id="login-card">
+    <p class="eyebrow">private &middot; just for you</p>
+    <h1 class="login-title">Something for you</h1>
+    <p class="login-sub">Enter the password to continue.</p>
+
+    <form id="login-form" autocomplete="off">
+      <div class="field">
+        <input type="password" id="password-input" placeholder="Password" autocomplete="new-password" />
+      </div>
+      <button type="submit" class="btn btn--primary btn--full" id="login-submit">
+        <span>Unlock</span>
+      </button>
+    </form>
+
+    <div class="error-popup" id="error-popup">Wrong password. Try again.</div>
+  </div>
+</section>
+
+<!-- ============================= USER PAGE ============================= -->
+<section id="user-screen" class="screen screen--hidden">
+  <div class="page-wrap">
+
+    <header class="user-header">
+      <p class="eyebrow">a private message</p>
+    </header>
+
+    <div class="glass-card message-card">
+      <p id="typewriter-message" class="message-text" aria-live="polite"></p>
+      <span id="typewriter-cursor" class="typewriter-cursor">|</span>
+    </div>
+
+    <div class="questions-block" id="questions-block">
+      <!-- question cards injected by script.js -->
+    </div>
+
+    <div class="glass-card feedback-card">
+      <label for="feedback-textarea" class="feedback-label">Anything else you want to say?</label>
+      <textarea id="feedback-textarea" maxlength="1000" placeholder="Write as much or as little as you want..."></textarea>
+      <div class="char-counter"><span id="char-count">0</span> / 1000</div>
+    </div>
+
+    <button id="submit-btn" class="btn btn--primary btn--full submit-btn" disabled>
+      <span id="submit-btn-label">Answer all questions to continue</span>
+    </button>
+
+    <div class="submit-status" id="submit-status"></div>
+
+  </div>
+</section>
+
+<!-- ============================= ADMIN DASHBOARD ============================= -->
+<section id="admin-screen" class="screen screen--hidden">
+  <div class="admin-wrap">
+
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">hidden dashboard</p>
+        <h1 class="admin-title">Responses</h1>
+        <p class="demo-badge" id="demo-badge">Local demo mode — this device only. Connect Firebase in config.js to share data across devices.</p>
+      </div>
+      <button class="btn btn--ghost" id="admin-logout-btn">Log out</button>
+    </header>
+
+    <div class="stat-grid">
+      <div class="glass-card stat-card">
+        <p class="stat-label">Total visitors</p>
+        <p class="stat-value" id="stat-visitors">0</p>
+      </div>
+      <div class="glass-card stat-card">
+        <p class="stat-label">Total responses</p>
+        <p class="stat-value" id="stat-responses">0</p>
+      </div>
+      <div class="glass-card stat-card stat-card--yes">
+        <p class="stat-label">Yes (Q1)</p>
+        <p class="stat-value" id="stat-yes">0</p>
+      </div>
+      <div class="glass-card stat-card stat-card--no">
+        <p class="stat-label">No (Q1)</p>
+        <p class="stat-value" id="stat-no">0</p>
+      </div>
+    </div>
+
+    <div class="glass-card chart-card">
+      <div class="chart-row">
+        <div class="chart-box">
+          <canvas id="chart-yesno"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="chart-timeline"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card controls-card">
+      <div class="controls-row">
+        <input type="text" id="search-input" placeholder="Search by feedback, answer, browser, device..." class="search-input" />
+        <select id="filter-select" class="filter-select">
+          <option value="all">All responses</option>
+          <option value="yes">Q1 = Yes</option>
+          <option value="no">Q1 = No</option>
+        </select>
+        <button class="btn btn--ghost" id="export-csv-btn">Export CSV</button>
+        <button class="btn btn--ghost" id="export-json-btn">Export JSON</button>
+        <button class="btn btn--danger" id="delete-all-btn">Delete all</button>
+      </div>
+    </div>
+
+    <div class="responses-list" id="responses-list">
+      <!-- response cards injected by script.js -->
+    </div>
+
+    <p class="empty-state" id="empty-state">No responses yet. Once your friend answers, it'll show up here in realtime.</p>
+
+  </div>
+</section>
+
+<!-- Confirm dialog (used for delete one / delete all) -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="glass-card modal-card">
+    <p class="modal-title" id="modal-title">Are you sure?</p>
+    <p class="modal-body" id="modal-body">This action can't be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn--ghost" id="modal-cancel-btn">Cancel</button>
+      <button class="btn btn--danger" id="modal-confirm-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ============================= SCRIPTS ============================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="config.js"></script>
+<script src="firebase.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
