@@ -24,7 +24,17 @@ const firebaseConfig = {
   measurementId: "G-2W9YW33087"
 };
 // The private message shown with the typewriter effect on the user page.
-const PRIVATE_MESSAGE = `Hey. I made this for you — a small, private corner of the internet where I could say something honestly and hear back from you just as honestly. Take your time. There's no wrong answer here.`;
+const PRIVATE_MESSAGE = `Hey how are u...??..
+I want to apologise from u because maine sab kharab kar diya ego mein aakar...tume mujhse dosti karni thi aur maine wo cheez bhi ni samjhi...aur ego mein aake tume wo message bheja tha...I'm so sorry yrrr...2 month to holidays mein hi nikal gye kuch pta ni lga..par ab jab tume daily dekh rha hu...to yrr bura lg rha hai...regret ho rha hai ki kyu maine tumse dosti bhi khtm kardi...yrr ab mai apni glti ko thik karna chahta hu...tum jaisa chahti ho hum dost hi rahenge...
+Thanking u for again reading my message 👀
+Yours Obediently .😅
+Abhinav...🫣
+
+"Agr tume kuch kehna ho to tum keh sakti ho...??"(and please kuch likhna..💫)
+
+"Aur yrr mai ye website banake message bhejna ye sab isiliye karta hu...kyunki mere andar itna confidence ni hai ki mai tumse school mein sabke samne baat karu...aur waise bhi logo mein kam baatien ni faili hai..to mai ni chahta ki unhe confirmation mil jaye....Par ab iske baad se mai try karunga ki offline hi baat karu....thodi communication skills develop karu..."
+That's All..!!💖
+`;
 
 // The questions asked, in order. Each becomes a YES / NO card.
 // The FIRST question in this list is treated as the "primary" question
