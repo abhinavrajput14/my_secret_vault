@@ -24,13 +24,12 @@ const firebaseConfig = {
   measurementId: "G-2W9YW33087"
 };
 // The private message shown with the typewriter effect on the user page.
-const PRIVATE_MESSAGE = `Hey. I made this just for you — a small, private corner of the internet where I could say something honestly and hear back from you just as honestly. Take your time. There's no wrong answer here.`;
+const PRIVATE_MESSAGE = `Hey. I made this for you — a small, private corner of the internet where I could say something honestly and hear back from you just as honestly. Take your time. There's no wrong answer here.`;
 
 // The questions asked, in order. Each becomes a YES / NO card.
 // The FIRST question in this list is treated as the "primary" question
 // for the admin dashboard's YES / NO summary counters.
 const QUESTIONS = [
-  { id: "q1", text: "Do you think we're truly good friends?" },
-  { id: "q2", text: "Do you feel comfortable being fully honest with me?" },
-  { id: "q3", text: "Would you want more moments like this, just checking in?" }
+  { id: "q1", text: "So Can We Make a New Start?" },
+ 
 ];
