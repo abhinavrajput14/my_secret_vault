@@ -66,7 +66,7 @@ Aur current senario mein mai tumse baatein karna chahta hu....i want to know you
 
 Aur please yrrr, tum roya mat karo… main nahi chahta ki tum meri wajah se tum sad ho ya ro. ❤️
 
-Aur haan, iss message ko **zyada serious mat lena** 😭 maine bas jo feel hua woh sab likh diya… pata nahi kya-kya likh diya 😂
+Aur haan, iss message ko **zyada serious mat lena** ..maine bas jo feel hua woh sab likh diya… pata nahi kya-kya likh diya 🙂
 
 
 Bas ek chhoti si request hai…
