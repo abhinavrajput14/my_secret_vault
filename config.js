@@ -27,8 +27,8 @@ const firebaseConfig = {
 const PRIVATE_MESSAGE = String.raw`Heyyyy… yrrr, kaisi ho? ❤️
 
 
-I know tumhe shayad accha na lage ki main Saubhagya ke through tum tak message pahucha raha hoon. In fact usme to mujhe bahut mana kiya ki tumne
-mana kiya hai kuch bhi bhejne ko but maine hi request ki usse...She’s not my messenger, and honestly mujhe bhi ye sahi nahi lagta… but school to tum aaogi nahi, isliye mere paas aur koi way nahi tha.
+I know tumhe shayad accha na lage ki main shrishti ke through tum tak message pahucha raha hoon. Saubhagya ne to mana kar diya bhejne to mere paas koi option ni tha in fact shrishti bhi 
+mana kar rhi thi, but maine hi request ki usse... and honestly mujhe bhi ye sahi nahi lagta… but school to tum aaogi nahi, isliye mere paas aur koi way nahi tha.
 
 
 Main honestly ek baat kehna chahta hoon. Us din jab tumne kaha tha ki tum nahi chahti ki tumhari wajah se main hurt hou… I understood that. But things are not that simple for me.
@@ -72,8 +72,7 @@ Aur haan, iss message ko **zyada serious mat lena** ..maine bas jo feel hua woh 
 
 Bas ek chhoti si request hai…
 
-
-**At least meri friend banke rehna. ❤️**
+Iss message ko padhne ke baad tum shrishti se gussa mat ho jana ki usne tume ye message kyun bheja....
 
 
 Thanking you,
